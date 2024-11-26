@@ -1,0 +1,129 @@
+@forward "./reset";
+
+// *** Variables ***
+$bg-color: #19a1ae;
+$bg-card: #fff;
+$color-card-line: #e8e9ec;
+$color-primary: #2e3349;
+$color-secondary: #6b7082;
+
+// *** Mixins ***
+
+@mixin flex-settings(
+	$direction: row,
+	$align: center,
+	$justify: center,
+	$gap: null
+) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+
+	@if $gap {
+		gap: $gap;
+	}
+}
+
+// *** Main Styles ***
+
+body {
+	@include flex-settings;
+	height: 100vh;
+	background-color: $bg-color;
+	color: $color-primary;
+
+	font: {
+		family: "Kumbh Sans", sans-serif;
+		size: 1.8rem;
+	}
+
+	position: relative;
+	overflow: hidden;
+
+	background: {
+		image: url("../images/bg-pattern-top.svg"),
+			url("../images/bg-pattern-bottom.svg");
+		repeat: no-repeat, no-repeat;
+		position: right 50vw bottom 39vh, left 46vw top 57vh;
+	}
+
+	@media (max-width: 380px) {
+		background-position: right 50vw bottom 39vh, left 25vw top 49vh;
+	}
+}
+
+.card {
+	position: relative;
+	width: 35rem;
+	height: 37.4rem;
+	border-radius: 1.5rem;
+	background-color: $bg-card;
+	box-shadow: 0 5rem 10rem -2rem rgba($color: #08465e, $alpha: 0.548);
+	overflow: hidden;
+	z-index: 100;
+
+	@include flex-settings(column, $justify: null);
+
+	&__author {
+		@include flex-settings(column, $justify: null);
+
+		padding-bottom: 2.4rem;
+
+		&-img {
+			position: relative;
+			margin-top: -5rem;
+			border-radius: 50%;
+			border: 0.5rem solid $bg-card;
+			z-index: 2;
+		}
+
+		&-details {
+			display: flex;
+			gap: 1rem;
+			margin-top: 2.4rem;
+
+			.card__author-name {
+				font-weight: bold;
+			}
+
+			.card__author-age {
+				color: $color-secondary;
+			}
+		}
+
+		&-location {
+			margin-top: 0.8rem;
+			font-size: 1.4rem;
+			color: $color-secondary;
+		}
+	}
+
+	&__social {
+		@include flex-settings($gap: 5.4rem);
+
+		width: 100%;
+		padding: 2.4rem 5.05rem 0;
+
+		border-top: 0.1rem solid $color-card-line;
+		text-align: center;
+		font-size: 1rem;
+		letter-spacing: 1.5px;
+
+		&-item {
+			@include flex-settings(column, null, null, $gap: 0.9rem);
+		}
+
+		&-value {
+			@include flex-settings(column, null, null, $gap: 0.9rem);
+
+			font-size: 1.8rem;
+		}
+
+		&-label {
+			@include flex-settings(column, null, null, $gap: 0.9rem);
+
+			color: $color-secondary;
+		}
+	}
+}

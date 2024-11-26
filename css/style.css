@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input,
+button,
+textarea {
+  background-color: #fff;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #19a1ae;
+  color: #2e3349;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 39vh, left 46vw top 57vh;
+}
+@media (max-width: 380px) {
+  body {
+    background-position: right 50vw bottom 39vh, left 25vw top 49vh;
+  }
+}
+
+.card {
+  position: relative;
+  width: 35rem;
+  height: 37.4rem;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 5rem 10rem -2rem rgba(8, 70, 94, 0.548);
+  overflow: hidden;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card__author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2.4rem;
+}
+.card__author-img {
+  position: relative;
+  margin-top: -5rem;
+  border-radius: 50%;
+  border: 0.5rem solid #fff;
+  z-index: 2;
+}
+.card__author-details {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+.card__author-details .card__author-name {
+  font-weight: bold;
+}
+.card__author-details .card__author-age {
+  color: #6b7082;
+}
+.card__author-location {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #6b7082;
+}
+.card__social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5.4rem;
+  width: 100%;
+  padding: 2.4rem 5.05rem 0;
+  border-top: 0.1rem solid #e8e9ec;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+.card__social-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.card__social-value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  font-size: 1.8rem;
+}
+.card__social-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  color: #6b7082;
+}
